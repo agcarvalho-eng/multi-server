@@ -4,10 +4,11 @@ const cluster = require('cluster')
 //Pegando a quantidade de cpus disponíveis do computador.
 const cpus = require('os').cpus().length
 //Imprimindo a quantidade de cpus.
-console.log("Total de núcleos de CPUs: " + cpus);
+
 
 //Verificando se é a primeira instância (esta vai gerenciar as demais).
 if(cluster.isPrimary){
+    console.log("Total de núcleos de CPUs: " + cpus);
     console.log('Iniciando instância primária com PID: ' + process.pid);
     for (let i = 0; i < cpus-1; i++) {
         //fork (bifurcar) = cria um clone do processo, ou seja, um processo filho.
