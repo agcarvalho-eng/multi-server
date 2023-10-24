@@ -1,0 +1,15 @@
+{
+  "name": "single-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "loadtest": "autocannon -c 10000 -d 10 -w 10 --renderStatusCodes --warmup [-c 1 -d 3 ] http://localhost:8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autocannon": "^7.12.0"
+  }
+}
